@@ -1,0 +1,16 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Calculateur de Prix" />
+    
+    <GridLayout rows="auto, *">
+        <SearchBar row="0" hint="Rechercher un produit..." text="{{ searchQuery }}" />
+        
+        <ListView row="1" items="{{ products }}" itemTap="{{ onItemTap }}">
+            <ListView.itemTemplate>
+                <StackLayout class="p-2">
+                    <Label text="{{ name }}" class="text-lg font-bold" />
+                    <Label text="{{ 'Prix de base: ' + basePrice + '€' }}" class="text-sm text-gray-600" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>

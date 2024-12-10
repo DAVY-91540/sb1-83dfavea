@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ product.name }}" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="{{ product.name }}" class="text-2xl font-bold mb-4" />
+            
+            <GridLayout rows="auto, auto" columns="*, *" class="mb-4">
+                <Label text="Taille:" class="font-bold" row="0" col="0" />
+                <DropDown items="{{ sizes }}" selectedIndex="{{ selectedSizeIndex }}" 
+                         row="0" col="1" />
+                
+                <Label text="Couleur:" class="font-bold" row="1" col="0" />
+                <DropDown items="{{ colors }}" selectedIndex="{{ selectedColorIndex }}"
+                         row="1" col="1" />
+            </GridLayout>
+            
+            <Label text="{{ 'Prix calculé: ' + calculatedPrice + '€' }}" 
+                   class="text-xl text-green-600 font-bold text-center p-4" />
+            
+            <Button text="Exporter vers Excel" tap="{{ exportToExcel }}" 
+                    class="-primary" />
+        </StackLayout>
+    </ScrollView>
+</Page>
